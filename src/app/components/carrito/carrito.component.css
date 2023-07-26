@@ -1,0 +1,17 @@
+table.table.table-hover.table-dark {
+    width: 70%;
+    left: 15%;
+    position: absolute;
+}
+
+select#rol {
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.alert.alert-info {
+    width: 85%;
+    left: 15%;
+}

@@ -1,0 +1,115 @@
+import { Component, OnInit } from '@angular/core';
+import { MessagesService } from 'src/app/services/messages.service';
+import { PetitionService } from 'src/app/services/petition.service';
+
+declare var $:any
+
+
+@Component({
+  selector: 'app-products-a',
+  templateUrl: './products-a.component.html',
+  styleUrls: ['./products-a.component.css']
+})
+export class ProductsAComponent implements OnInit{
+
+
+constructor(private petition: PetitionService, private msg:MessagesService){}
+
+  id:string=""
+  product:string=""
+  price:string=""
+  quantity:string=""
+  image:string=""
+  category:object={}
+  email:string=""
+  adress:string=""
+  data:any[] = []
+
+ngOnInit(): void {
+  
+  this.show()
+}
+
+state(){
+
+  var post={
+    host: this.petition.urllocal,
+    path:'/state',
+    payload: {
+    }
+  }
+this.petition.Post(post.host + post.path,post.payload).then((res:any)=>{
+console.log(res)
+this.email=res.email
+this.adress=res.adress
+})
+}
+
+  show(){
+
+    var post={
+      host: this.petition.urllocal,
+      path:'/product/show',
+      payload: {}
+    }
+
+this.petition.Post(post.host + post.path,post.payload).then((res:any)=>{
+  console.log(res)
+  this.data = res.data.datos  
+})
+
+  }
+
+  addToCart(id:string){
+    console.log(id)
+    var post={
+      host: this.petition.urllocal,
+      path:'/product/cargarId',
+      payload: {
+        id:id
+      }
+    }
+
+this.petition.Post(post.host + post.path,post.payload).then((res:any)=>{
+console.log(res.datos[0])
+this.id = res.datos[0]._id
+this.quantity = res.datos[0].quantity  
+this.price = res.datos[0].price  
+this.product = res.datos[0].product  
+
+})      
+
+
+    $('#exampleModal').modal('show')
+}
+
+add(){
+
+  var post={
+    host: this.petition.urllocal,
+    path:'/cart/add',
+    payload: {
+      _id:this.id,
+      quantity:this.quantity,
+      price:this.price,
+      product:this.product,
+      email:this.email,
+      adress:this.adress
+    }
+  }
+
+this.petition.Post(post.host + post.path,post.payload).then((res:any)=>{
+
+console.log(res)
+if(res.state == false){
+  this.msg.Load(res.message || res.mensaje,'danger',4000)
+ }else{
+   this.msg.Load(res.message || res.mensaje,'success',4000)
+   this.show()
+   $('#exampleModal').modal('hide')
+ }
+
+})
+}
+
+}

@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+<div>
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Módulo de Productos</h4>
+        <p>Utilice este módulo para actualizar la cantidad de los productos en stock.</p>
+    </div>
+</div>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td (click)="edit(item._id)">{{item._id}}</td>
+            <td (click)="edit(item._id)">{{item.product}}</td>
+            <td (click)="edit(item._id)">{{item.price}}</td>
+            <td (click)="edit(item._id)">{{item.quantity}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">ID</label>
+                        <input type="text" class="form-control" [(ngModel)]="id">
+                        <label for="recipient-name" class="col-form-label">Cantidad</label>
+                        <input type="text" class="form-control" [(ngModel)]="quantity">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="update()">update</button>
+            </div>
+        </div>
+    </div>
+</div>

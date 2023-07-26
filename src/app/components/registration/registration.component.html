@@ -1,0 +1,39 @@
+<div id="regis">
+    <div class="container">
+        <div class="logolilium">
+            <a routerLink="/home"><img src="../../../assets/Logolilium.png" alt="Logolilium"></a>
+        </div>
+        <div class="login-box">
+            <h2>Regístrate</h2>
+            <form id="registrationForm">
+                <div class="user-box">
+                    <input type="text" name="nombre" required="" id="name" [(ngModel)]="name">
+                    <label>Nombre y apellidos</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="correo" required="" id="email" [(ngModel)]="email">
+                    <label>Correo</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="telefono" required="" id="phone" [(ngModel)]="phone">
+                    <label>Teléfono</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="Dirección" required="" id="adress" [(ngModel)]="adress">
+                    <label>Dirección</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="contraseña" required="" id="password" [(ngModel)]="password">
+                    <label>Contraseña</label>
+                </div>
+                <a (click)="save()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> Crear cuenta
+                </a>
+            </form>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

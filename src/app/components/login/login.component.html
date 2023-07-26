@@ -1,0 +1,21 @@
+<div id="login" *ngIf="rol == undefined">
+    <form class="form-inline my-2 my-lg-0">
+        <input class="userBox" type="text" placeholder="Correo electrónico o teléfono" name="email" [(ngModel)]="email">
+        <input class="userBox" type="password" placeholder="Contraseña" name="password" [(ngModel)]="password">
+        <button class="login" type="submit" (click)="login()">Iniciar sesión</button>
+    </form>
+</div>
+
+<div id="welcome" *ngIf="rol != undefined">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item" (click)="logout()">Cerrar sesión</button>
+            <button class="dropdown-item" *ngIf="rol == 'admin'" routerLink="/users">Módulos</button>
+        </div>
+    </div>
+    <h3>{{welcome}}</h3>
+
+
+</div>

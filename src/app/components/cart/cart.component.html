@@ -1,0 +1,22 @@
+<app-header></app-header>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Dirección de envío</th>
+            <th scope="col">Estado de envío</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of data">
+        <tr>
+            <th scope="row">{{item.product}}</th>
+            <td>{{item.price}}</td>
+            <td>{{item.adress}}</td>
+            <td>{{item.estado}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<app-footer></app-footer>

@@ -1,0 +1,67 @@
+<app-menu></app-menu>
+<div>
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Módulo de usuarios</h4>
+        <p>Utilice este módulo para agregar, actualizar o eliminar usuarios.</p>
+    </div>
+</div>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col"> <button type="button" class="btn btn-success" data-toggle="modal" data-whatever="@getbootstrap" (click)="new()">+</button><br>Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Rol</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td (click)="edit(item._id)">{{item.name}}</td>
+            <td (click)="edit(item._id)">{{item.email}}</td>
+            <td (click)="edit(item._id)">{{item.phone}}</td>
+            <td (click)="edit(item._id)">{{item.adress}}</td>
+            <td (click)="edit(item._id)">{{item.rol}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="delete(item._id)">🗑️</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="name">
+                        <label for="recipient-name" class="col-form-label">Correo</label>
+                        <input type="text" class="form-control" id="email" [(ngModel)]="email">
+                        <label for="recipient-name" class="col-form-label">Teléfono:</label>
+                        <input type="text" class="form-control" id="phone" [(ngModel)]="phone">
+                        <label for="recipient-name" class="col-form-label">Dirección:</label>
+                        <input type="text" class="form-control" id="adress" [(ngModel)]="adress">
+                        <label for="recipient-name" class="col-form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="password" [(ngModel)]="password">
+                        <select name="rol" id="rol" [(ngModel)]="rol" *ngIf="id != ''">Rol
+                            <option value="client" id="rol" [(ngModel)]="rol">Client</option>
+                            <option value="admin" id="rol" [(ngModel)]="rol">Admin</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="save()" *ngIf="id == ''">Save</button>
+                <button type="button" class="btn btn-primary" (click)="update()" *ngIf="id != ''">update</button>
+            </div>
+        </div>
+    </div>
+</div>

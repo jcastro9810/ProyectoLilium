@@ -1,0 +1,57 @@
+<app-menu></app-menu>
+<div>
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Módulo de ventas</h4>
+        <p>Utilice este módulo para modificar el estado de las ventas</p>
+    </div>
+</div>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Dirección de envío</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Estado</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td (click)="edit(item._id)">{{item.product}}</td>
+            <td (click)="edit(item._id)">{{item.price}}</td>
+            <td (click)="edit(item._id)">{{item.adress}}</td>
+            <td (click)="edit(item._id)">{{item.quantity}}</td>
+            <td (click)="edit(item._id)">{{item.estado}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="delete(item._id)">🗑️</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Estado del envío</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <select name="rol" id="esatdo" [(ngModel)]="estado">
+                            <option value="Pendiente" id="estado" [(ngModel)]="estado">Pendiente</option>
+                            <option value="Enviado" id="estado" [(ngModel)]="estado">Enviado</option>
+                            <option value="Error" id="estado" [(ngModel)]="estado">Error</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="update()">update</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+a.navbar-brand {
+    width: 300px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #ffffff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+    color: #ffffff;
+}
+
+.btn-outline-success {
+    color: #ffffff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #ffffff;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/016/548/143/original/pink-stain-watercolor-png.png);
+}
+
+input.userBox {
+    background: transparent;
+    border: none;
+    border-bottom: solid 1px;
+    color: white;
+    font-size: 13px;
+    margin-right: 20px;
+    width: 180px;
+    transition: border-color 0.3s ease;
+}
+
+button.login {
+    background: transparent;
+    color: white;
+    border: solid 1px white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+a.nav-link:hover,
+.footerText a:hover {
+    color: #000000;
+}
+
+.btn-outline-success:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+input.userBox:hover,
+input.userBox:focus {
+    border-color: #ffffff;
+}
+
+button.login:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.carousel-item:hover .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-item:hover .carousel-caption h5,
+.carousel-item:hover .carousel-caption p {
+    color: #ffcc00;
+}
+
+a:hover img {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+a.btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+input.userBox:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.video1 {
+    width: 60%;
+    float: left;
+    padding-top: 35% !important;
+}
+
+h6 {
+    text-align: justify;
+}
+
+.videoPublicitario {
+    margin: 60px;
+}
+
+#offer {
+    width: 100%;
+}

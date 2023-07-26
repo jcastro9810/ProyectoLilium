@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+
+
+<div class="card">
+    <div class="card-header">
+        Lilium
+    </div>
+    <div class="card-body" *ngFor="let item of data">
+        <h5 class="card-title">{{item.price}}</h5>
+        <p class="card-text">{{item.product}}</p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="addToCart(item._id)" (click)="state()">
+            Añadir al carrito
+          </button>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Añadir al carrito</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                {{product}} añadido al carrito
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                <button type="button" class="btn btn-primary" (click)="add()">Hacer pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

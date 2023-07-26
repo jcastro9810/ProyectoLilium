@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/home"><img src="../../../assets/Logolilium.png" alt="logolilium"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" routerLink="/productsB">Productos</a>
+                        <a class="dropdown-item" routerLink="/productsA">Comprar</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/registration">Regístrate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" routerLink="/cart"><img src="../../../assets/e39eb7217c7b5157d2c9154564d76598-icono-de-carrito-de-compras-rosa.png" alt=""></a>
+            </li>
+        </ul>
+        <app-login></app-login>
+    </div>
+</nav>
